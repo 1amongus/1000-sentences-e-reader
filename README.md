@@ -339,5 +339,5 @@ above).
   https://ereaders.samsaadhanii.in/books/ereaders/
 - Permission to render these books, including other Samsaadhanii books,
   granted by Prof. Kulkarni on 14 November 2026.
-- Built by Sarath Oruganti. Non-commercial, open-source intent; see
+- Non-commercial, open-source intent; see
   Principles above.
