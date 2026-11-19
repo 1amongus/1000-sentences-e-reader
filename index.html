@@ -507,7 +507,7 @@ body.in-lesson .fab-practice,body.in-complete .fab-practice{display:none}
         <h2>Attribution — thank you, Samsādhanī</h2>
         <p>All of the Sanskrit content in this reader — the <strong>1000 Sentences</strong> collection, its translations, and the morphological and kāraka analysis shown for each word, including the kāraka graph drawn in every lesson — comes from <a href="https://sanskrit.uohyd.ac.in/scl/" target="_blank" rel="noopener">Samsādhanī (Saṁsādhanī)</a>, developed at the <strong>Department of Sanskrit Studies, University of Hyderabad</strong> under the guidance of <strong>Prof. Amba Kulkarni</strong>. The original collection lives in the <a href="http://ereaders.samsaadhanii.in/books/ereaders/" target="_blank" rel="noopener">Samsādhanī e-readers</a> — please visit and support the source.</p>
         <p>This page is an unofficial, grateful re-presentation: it adds a tile index, progress and practice around Samsādhanī's material, and claims no credit for the underlying sentences or analysis. Any errors introduced in re-presenting the sample lessons are ours, not theirs. If you find this reader useful, the thanks belong to Samsādhanī — <em>dhanyavādāḥ</em>.</p>
-        <p class="credit-line">Source: <a href="https://sanskrit.uohyd.ac.in/scl/" target="_blank" rel="noopener">sanskrit.uohyd.ac.in/scl</a> · E-readers: <a href="http://ereaders.samsaadhanii.in/books/ereaders/" target="_blank" rel="noopener">ereaders.samsaadhanii.in</a> · Content © its creators at the University of Hyderabad; please follow Samsādhanī's own terms for reuse. · Reader v<span id="appVersion">3</span></p>
+        <p class="credit-line">Source: <a href="https://sanskrit.uohyd.ac.in/scl/" target="_blank" rel="noopener">sanskrit.uohyd.ac.in/scl</a> · E-readers: <a href="http://ereaders.samsaadhanii.in/books/ereaders/" target="_blank" rel="noopener">ereaders.samsaadhanii.in</a> · Content © its creators at the University of Hyderabad; please follow Samsādhanī's own terms for reuse. · Reader v<span id="appVersion">4</span></p>
       </footer>
 
     </div>
@@ -566,7 +566,7 @@ body.in-lesson .mobile-top,body.in-complete .mobile-top{display:none}
 </style>
 <script>
 /* ============ app version, shared mascot, update check ============ */
-var APP_VERSION = 3;
+var APP_VERSION = 4;
 /* The Ācārya mascot ships as ONE copy of the image: the #mascotMaster <img>
    on the completion screen. Every other mascot on the page reads that single
    source, so the exported single file carries the picture exactly once. */
@@ -995,6 +995,11 @@ function relationGraphSVG(s){
       if(kk2){ fill=KARAKAS[kk2].soft; stroke=KARAKAS[kk2].col; }
       else { fill='var(--hover)'; stroke='var(--border2)'; }
       lab = M.label[r.i] || (w.morph && w.morph.indexOf('कर्तरि')>-1 ? 'क्रिया · kriyā' : null);
+      /* द्योतक relations are shown grayed (not hidden), per the Nov 14 agreement
+         with Prof. Kulkarni: only the relation label softens to the secondary
+         ink; the word and its gloss stay full-strength, and the source
+         relation name itself is unchanged. */
+      if(lab && lab.indexOf('द्योतक')>-1) labCol='var(--ink2)';
     }
     var inner='<rect class="g-box" x="'+r.x+'" y="'+r.y+'" width="'+bw+'" height="'+r.h+'" rx="13" style="fill:'+fill+';stroke:'+stroke+'" stroke-width="'+(isHub?3:2.5)+'"/>';
     if(lab && !isHub){
